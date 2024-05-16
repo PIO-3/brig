@@ -8,24 +8,21 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   
     function createBrigText() {
-      // Создаем временный элемент для вычисления размеров текста
       const tempText = document.createElement('div');
       tempText.textContent = 'brig';
       tempText.classList.add('brig-text');
-      tempText.style.visibility = 'hidden'; // Скрываем элемент
+      tempText.style.visibility = 'hidden';
       gameContainer.appendChild(tempText);
       
       // Получаем размеры временного элемента
       const textWidth = tempText.offsetWidth;
       const textHeight = tempText.offsetHeight;
-      gameContainer.removeChild(tempText); // Удаляем временный элемент
+      gameContainer.removeChild(tempText);
   
-      // Вычисляем случайное положение, гарантируя, что текст останется в пределах экрана
       const { clientWidth, clientHeight } = document.documentElement;
       const x = Math.random() * (clientWidth - textWidth);
       const y = Math.random() * (clientHeight - textHeight);
   
-      // Создаем настоящий элемент текста
       const brigText = document.createElement('div');
       brigText.textContent = 'brig';
       brigText.classList.add('brig-text');
